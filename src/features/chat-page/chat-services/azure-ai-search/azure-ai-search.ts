@@ -17,7 +17,7 @@ import {
 
 export interface AzureSearchDocumentIndex {
   id: string;
-  vector: string;
+  pageContent: string;
   embedding?: number[];
   user: string;
   chatThreadId: string;
