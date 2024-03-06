@@ -22,6 +22,7 @@ export interface AzureSearchDocumentIndex {
   user: string;
   chatThreadId: string;
   metadata: string;
+  url: string;
 }
 
 export type DocumentSearchResponse = {
