@@ -61,7 +61,7 @@ export const ChatPage: FC<ChatPageProps> = (props) => {
                 }}
                 profilePicture={
                   message.role === "assistant"
-                    ? "/dpc-ai-icon.png"
+                    ? "/VoltWrite Cow Circle Small.png"
                     : session?.user?.image
                 }
               >
