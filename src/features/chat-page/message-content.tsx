@@ -9,7 +9,7 @@ import {
 } from "../ui/accordion";
 import { RecursiveUI } from "../ui/recursive-ui";
 import { CitationAction } from "./citation/citation-action";
-import { getCurrentUser } from "../auth-page/helpers";
+
 
 interface MessageContentProps {
   message: {
@@ -19,6 +19,8 @@ interface MessageContentProps {
     multiModalImage?: string;
   };
 }
+
+const { data } = useSession();
 
 const MessageContent: React.FC<MessageContentProps> = ({ message }) => {
   const user = getCurrentUser();
@@ -34,7 +36,7 @@ const MessageContent: React.FC<MessageContentProps> = ({ message }) => {
     );
   }
 
-  if (user.isAdmin && (message.role === "tool" || message.role === "function")) {
+  if (data?.user?.isAdmin && (message.role === "tool" || message.role === "function")) {
     return (
       <div className="py-3">
         <Accordion
