@@ -10,8 +10,6 @@ import {
 import { RecursiveUI } from "../ui/recursive-ui";
 import { CitationAction } from "./citation/citation-action";
 
-const user = await getCurrentUser();
-
 interface MessageContentProps {
   message: {
     role: string;
@@ -22,6 +20,7 @@ interface MessageContentProps {
 }
 
 const MessageContent: React.FC<MessageContentProps> = ({ message }) => {
+  const user = await getCurrentUser();
   if (message.role === "assistant" || message.role === "user") {
     return (
       <>
