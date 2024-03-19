@@ -20,7 +20,7 @@ interface MessageContentProps {
 }
 
 const MessageContent: React.FC<MessageContentProps> = ({ message }) => {
-  const user = await getCurrentUser();
+  const user = getCurrentUser();
   if (message.role === "assistant" || message.role === "user") {
     return (
       <>
