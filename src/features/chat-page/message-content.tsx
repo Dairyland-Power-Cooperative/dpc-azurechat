@@ -10,6 +10,8 @@ import {
 import { RecursiveUI } from "../ui/recursive-ui";
 import { CitationAction } from "./citation/citation-action";
 
+const user = await getCurrentUser();
+
 interface MessageContentProps {
   message: {
     role: string;
@@ -32,7 +34,7 @@ const MessageContent: React.FC<MessageContentProps> = ({ message }) => {
     );
   }
 
-  if (message.role === "tool" || message.role === "function") {
+  if (user.isAdmin && (message.role === "tool" || message.role === "function")) {
     return (
       <div className="py-3">
         <Accordion
