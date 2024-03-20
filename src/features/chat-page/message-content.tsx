@@ -23,7 +23,6 @@ interface MessageContentProps {
 const { data } = useSession();
 
 const MessageContent: React.FC<MessageContentProps> = ({ message }) => {
-  const user = getCurrentUser();
   if (message.role === "assistant" || message.role === "user") {
     return (
       <>
